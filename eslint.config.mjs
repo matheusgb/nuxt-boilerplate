@@ -9,5 +9,13 @@ export default withNuxt(
       quotes: ['error', 'single'],
       indent: ['error', 2],
     },
+    overrides: [
+      {
+        files: ['*.vue'],
+        rules: {
+          'vue/script-indent': ['error', 2, { baseIndent: 1 }],
+        },
+      },
+    ],
   })
 );

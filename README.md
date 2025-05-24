@@ -1,75 +1,51 @@
-# Nuxt Minimal Starter
+# Boilerplate Nuxt + Prisma
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Este projeto é um **boilerplate** criado para fins de aprendizado, utilizando Nuxt 3, Prisma e Bootstrap. Ele serve como ponto de partida para quem deseja estudar ou iniciar aplicações fullstack modernas com Vue/Nuxt no frontend e Prisma como ORM no backend.
 
-## Setup
+## Sobre o Projeto
 
-Make sure to install dependencies:
+- **Nuxt 3** para o frontend e rotas.
+- **Prisma** como ORM para manipulação do banco de dados.
+- **Bootstrap** para estilização rápida e responsiva.
+- Exemplos de CRUD de usuários, incluindo criação, listagem, atualização e exclusão (com suporte a modais).
 
-```bash
-# npm
-npm install
+## Como rodar o projeto localmente
 
-# pnpm
-pnpm install
+1. **Clone o repositório:**
 
-# yarn
-yarn install
+   ```bash
+   git clone https://github.com/matheusgb/nuxt-boilerplate
+   cd boilerplate
+   ```
 
-# bun
-bun install
-```
+2. **Instale as dependências:**
 
-## Development Server
+   ```bash
+   pnpm install
+   ```
 
-Start the development server on `http://localhost:3000`:
+3. **Configure o banco de dados:**
 
-```bash
-# npm
-npm run dev
+   - Edite o arquivo `.env` com a variável `DATABASE_URL` (por padrão, usa SQLite).
+   - Rode as migrations e gere o client Prisma:
+     ```bash
+     npx prisma migrate dev
+     npx prisma generate
+     ```
 
-# pnpm
-pnpm dev
+4. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   # ou
+   yarn dev
+   # ou
+   pnpm dev
+   # ou
+   bun run dev
+   ```
 
-# yarn
-yarn dev
+Acesse o projeto em [http://localhost:3000](http://localhost:3000).
 
-# bun
-bun run dev
-```
+---
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Para mais informações, consulte a [documentação do Nuxt](https://nuxt.com/docs/getting-started/introduction) e a [documentação do Prisma](https://www.prisma.io/docs/).
