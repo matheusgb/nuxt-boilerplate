@@ -35,13 +35,7 @@ Este projeto é um **boilerplate** criado para fins de aprendizado, utilizando N
 
 4. **Inicie o servidor de desenvolvimento:**
    ```bash
-   npm run dev
-   # ou
-   yarn dev
-   # ou
    pnpm dev
-   # ou
-   bun run dev
    ```
 
 Acesse o projeto em [http://localhost:3000](http://localhost:3000).
