@@ -39,27 +39,26 @@
 </script>
 
 <template>
-  <div class="container py-4">
-    <div class="d-flex justify-content-end">
+  <div class="max-w-2xl mx-auto py-8">
+    <div class="flex justify-end mb-4">
       <NuxtLink to="/create" class="btn btn-primary">Criar usuário</NuxtLink>
     </div>
-    <h2 class="text-center mb-4">Listagem de Usuários</h2>
-    <ul class="list-group">
+    <h2 class="text-center text-2xl font-bold mb-6">Listagem de Usuários</h2>
+    <ul class="space-y-4">
       <li
         v-for="user in users"
         :key="user.id"
-        class="list-group-item d-flex justify-content-between align-items-center flex-column flex-sm-row text-center text-sm-start"
+        class="bg-base-200 rounded-lg shadow flex flex-col sm:flex-row sm:items-center sm:justify-between p-4"
       >
         <div>
-          <h5 class="mb-1">{{ user.name }}</h5>
-          <small class="text-muted">{{ user.email }}</small>
+          <h5 class="font-semibold text-lg mb-1">{{ user.name }}</h5>
+          <small class="text-gray-500">{{ user.email }}</small>
         </div>
-
-        <div class="mt-3 mt-sm-0">
-          <button @click="toggleUpdate(user.id)" class="btn btn-outline-primary btn-sm me-2">
+        <div class="flex gap-2 mt-3 sm:mt-0">
+          <button @click="toggleUpdate(user.id)" class="btn btn-outline btn-primary btn-sm">
             Atualizar Usuário
           </button>
-          <button @click="deleteUser(user.id)" class="btn btn-outline-danger btn-sm">
+          <button @click="deleteUser(user.id)" class="btn btn-outline btn-error btn-sm">
             Deletar Usuário
           </button>
         </div>
@@ -77,7 +76,7 @@
 </template>
 
 <style scoped>
-  .container {
-    max-width: 800px;
+  .max-w-2xl {
+    max-width: 42rem;
   }
 </style>

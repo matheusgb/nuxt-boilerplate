@@ -23,24 +23,24 @@
 </script>
 
 <template>
-  <div class="container py-4">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <h1 class="h4 fw-bold mb-4">Criar Usuário</h1>
-        <form @submit.prevent="submit">
-          <div class="mb-3">
-            <input v-model="name" type="text" class="form-control" placeholder="Nome" />
-          </div>
-          <div class="mb-3">
-            <input v-model="email" type="email" class="form-control" placeholder="Email" />
-          </div>
+  <div class="max-w-md mx-auto py-8">
+    <div class="bg-base-200 rounded-lg shadow p-8">
+      <h1 class="text-xl font-bold mb-6 text-center">Criar Usuário</h1>
+      <form @submit.prevent="submit" class="space-y-4">
+        <input v-model="name" type="text" class="input input-bordered w-full" placeholder="Nome" />
+        <input
+          v-model="email"
+          type="email"
+          class="input input-bordered w-full"
+          placeholder="Email"
+        />
+        <div class="flex gap-2 justify-end">
           <button type="submit" class="btn btn-primary">Criar</button>
-          <NuxtLink to="/" class="btn btn-secondary ms-2">Voltar</NuxtLink>
-        </form>
-
-        <div v-if="message" class="alert alert-success mt-4">
-          {{ message }}
+          <NuxtLink to="/" class="btn btn-secondary">Voltar</NuxtLink>
         </div>
+      </form>
+      <div v-if="message" class="alert alert-success mt-4">
+        {{ message }}
       </div>
     </div>
   </div>
