@@ -8,7 +8,10 @@ export default defineEventHandler(async (event) => {
     const body = await readBody<UpdateUserPayload>(event)
 
     if (!id || (!body.name && !body.email)) {
-        return { error: 'ID, nome ou e-mail obrigatórios' };
+        throw createError({
+            statusCode: 400,
+            message: 'ID, nome ou e-mail obrigatórios'
+        });
     }
 
     const user: User = await prisma.user.update({

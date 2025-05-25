@@ -5,7 +5,10 @@ export default defineEventHandler(async (event) => {
     const id = Number(query.id);
 
     if (!id) {
-        return { error: 'ID obrigatório' }
+        throw createError({
+            statusCode: 400,
+            message: 'ID obrigatório'
+        });
     }
 
     const userExists = await prisma.user.findUnique({
@@ -15,7 +18,10 @@ export default defineEventHandler(async (event) => {
     })
 
     if (!userExists) {
-        return { error: 'Usuário não encontrado' }
+        throw createError({
+            statusCode: 404,
+            message: 'Usuário não encontrado'
+        });
     }
 
     await prisma.user.delete({

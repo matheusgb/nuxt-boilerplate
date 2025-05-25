@@ -4,11 +4,15 @@
   const name = ref('');
   const email = ref('');
   const message = ref('');
+  const alertType = ref<'success' | 'error'>('success');
 
   const submit = () => {
     const payload: CreateUserPayload = { name: name.value, email: email.value };
     $fetch<User>('/api/users/create', {
       method: 'POST',
+      headers: {
+        Authorization: `Bearer fake-token`,
+      },
       body: payload,
     })
       .then((res) => {
@@ -16,8 +20,9 @@
         name.value = '';
         email.value = '';
       })
-      .catch((err) => {
-        message.value = err?.data?.error || 'Erro ao criar usuário';
+      .catch((_) => {
+        alertType.value = 'error';
+        message.value = 'Erro ao criar usuário';
       });
   };
 </script>
@@ -39,7 +44,11 @@
           <NuxtLink to="/" class="btn btn-secondary">Voltar</NuxtLink>
         </div>
       </form>
-      <div v-if="message" class="alert alert-success mt-4">
+      <div
+        v-if="message"
+        class="alert mt-4"
+        :class="alertType === 'success' ? 'alert-success' : 'alert-error'"
+      >
         {{ message }}
       </div>
     </div>

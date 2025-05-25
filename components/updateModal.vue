@@ -3,6 +3,7 @@
 
   const emit = defineEmits(['close', 'update']);
   const props = defineProps<{ userId: number; show: boolean }>();
+  const alertType = ref<'success' | 'error'>('success');
 
   const name = ref('');
   const email = ref('');
@@ -32,8 +33,9 @@
         emit('update', res);
         setTimeout(close, 1500);
       })
-      .catch((err) => {
-        message.value = err?.data?.error || 'Erro ao atualizar usuário';
+      .catch((_) => {
+        alertType.value = 'error';
+        message.value = 'Erro ao atualizar usuário';
       });
   };
 </script>
@@ -64,7 +66,7 @@
         <div
           v-if="message"
           class="mt-4 alert"
-          :class="message.includes('Erro') ? 'alert-error' : 'alert-success'"
+          :class="alertType === 'success' ? 'alert-success' : 'alert-error'"
         >
           {{ message }}
         </div>
