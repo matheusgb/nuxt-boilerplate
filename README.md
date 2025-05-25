@@ -1,12 +1,12 @@
 # Boilerplate Nuxt + Prisma
 
-Este projeto é um **boilerplate** criado para fins de aprendizado, utilizando Nuxt 3, Prisma e Bootstrap. Ele serve como ponto de partida para quem deseja estudar ou iniciar aplicações fullstack modernas com Vue/Nuxt no frontend e Prisma como ORM no backend.
+Este projeto é um **boilerplate** criado para fins de aprendizado, utilizando Nuxt 3, Prisma e DaisyUI (com Tailwind CSS). Ele serve como ponto de partida para quem deseja estudar ou iniciar aplicações fullstack modernas com Vue/Nuxt no frontend e Prisma como ORM no backend.
 
 ## Sobre o Projeto
 
 - **Nuxt 3** para o frontend e rotas.
 - **Prisma** como ORM para manipulação do banco de dados.
-- **Bootstrap** para estilização rápida e responsiva.
+- **DaisyUI** (com Tailwind CSS) para estilização rápida, moderna e customizável.
 - Exemplos de CRUD de usuários, incluindo criação, listagem, atualização e exclusão (com suporte a modais).
 
 ## Como rodar o projeto localmente
@@ -42,4 +42,4 @@ Acesse o projeto em [http://localhost:3000](http://localhost:3000).
 
 ---
 
-Para mais informações, consulte a [documentação do Nuxt](https://nuxt.com/docs/getting-started/introduction) e a [documentação do Prisma](https://www.prisma.io/docs/).
+Para mais informações, consulte a [documentação do Nuxt](https://nuxt.com/docs/getting-started/introduction), a [documentação do Prisma](https://www.prisma.io/docs/) e a [documentação do DaisyUI](https://daisyui.com/).
