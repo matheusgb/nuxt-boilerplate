@@ -50,8 +50,10 @@
         :key="user.id"
         class="bg-base-200 rounded-lg shadow flex flex-col sm:flex-row sm:items-center sm:justify-between p-4"
       >
-        <div>
-          <h5 class="font-semibold text-lg mb-1">{{ user.name }}</h5>
+        <div class="flex flex-col">
+          <NuxtLink :to="`/users/${user.id}`" class="font-semibold text-lg mb-1 hover:underline">
+            {{ user.name }}
+          </NuxtLink>
           <small class="text-gray-500">{{ user.email }}</small>
         </div>
         <div class="flex gap-2 mt-3 sm:mt-0">
