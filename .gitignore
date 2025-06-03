@@ -26,3 +26,4 @@ logs
 # Banco de dados SQLite
 *.db
 prisma/*.db
+prisma/*-journal

@@ -82,21 +82,26 @@
       </li>
     </ul>
 
+    <!-- 
     <div v-if="totalPages > 1" class="flex justify-center mt-8 gap-2">
       <button class="btn btn-sm" :disabled="page === 1" @click="page--">Anterior</button>
       <span class="px-2 py-1">Página {{ page }} de {{ totalPages }}</span>
       <button class="btn btn-sm" :disabled="page === totalPages" @click="page++">Próxima</button>
-    </div>
+    </div> -->
 
     <div v-if="totalPages > 1" class="flex justify-center mt-4 gap-1">
+      <button class="btn btn-sm btn-ghost text-xl" :disabled="page === 1" @click="page--"><</button>
       <button
         v-for="p in totalPages"
         :key="p"
-        class="btn btn-xs"
+        class="btn btn-sm btn-ghost text-lg"
         :class="{ 'btn-active btn-primary': page === p }"
         @click="page = p"
       >
         {{ p }}
+      </button>
+      <button class="btn btn-sm btn-ghost text-xl" :disabled="page === totalPages" @click="page++">
+        >
       </button>
     </div>
 
